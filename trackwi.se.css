@@ -51,3 +51,22 @@
   height: 100%;
   cursor: default;
 }
+
+.track .unit-count {
+  float: right;
+  background: #a90329;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-size: 11px;
+  line-height: 16px;
+  margin-top: 1px;
+  margin-right: -2px;
+}
+
+.track.selected .unit-count ,
+.track:hover .unit-count ,
+.track.selected:hover .unit-count {
+  background: #fff;
+  color: inherit;
+}

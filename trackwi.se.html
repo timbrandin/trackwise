@@ -26,6 +26,7 @@
           </div>
         {{else}}
           <div class="display">
+            <span class="unit-count">{{unit_count}}</span>
             <a class="track-name {{name_class}}" href="/track/{{name}}/{{_id}}">
               {{name}}
             </a>
@@ -48,10 +49,10 @@
         {{> unit}}
       {{/each}}
     </ul>
-    <div class="controls-all">
+<!--    <div class="controls-all">
       <button>Publish all</button>
       <button>Unpublish all</button>
-    </div>
+    </div>-->
   </div>
   {{/if}}
 </template>
@@ -65,14 +66,14 @@
     {{else}}
       <div class="destroy"></div>
       <div class="display">
-        <input class="check" name="selected" type="checkbox" {{{selected}}} />
+        <!--<input class="check" name="selected" type="checkbox" {{{selected}}} />-->
         <span class="unit-text">{{name}}</span>
-        <span class="controls">
+<!--        <span class="controls">
           <button class="break-apart">Break apart</button>
           <button class="add-options">Add options</button>
           <button class="settings">Set price</button>
           <button class="publish">Publish</button>
-        </span>
+        </span>-->
       </div>
     {{/if}}
   </li>

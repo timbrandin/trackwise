@@ -112,6 +112,11 @@ Meteor.autosubscribe(function () {
     return Session.equals('editing_trackname', this._id);
   };
   
+  Template.tracks.unit_count = function () {
+    var f = Units.find({track_id: this._id});
+    return f.count();
+  }
+  
   Template.track.any_track_selected = function () {
     return !Session.equals('track_id', null);
   };
