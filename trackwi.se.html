@@ -1,0 +1,79 @@
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id="side-pane">
+    {{> tracks}}
+  </div>
+  
+  <div id="main-pane">
+    {{> track}}
+  </div>
+</body>
+
+<template name="tracks">
+  <h3>My Tracks</h3>
+  <div id="createTrack">
+    <input type="text" id="new-track" placeholder="New track" />
+  </div>
+  <ul id="tracks">
+    {{#each tracks}}
+      <li class="track {{selected}}">
+        {{#if editing}}
+          <div class="edit">
+            <input class="track-name-input" id="track-name-input" type="text" value="{{name}}" />
+          </div>
+        {{else}}
+          <div class="display">
+            <a class="track-name {{name_class}}" href="/track/{{name}}/{{_id}}">
+              {{name}}
+            </a>
+          </div>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="track">
+  {{#if any_track_selected}}
+  <h3>Units</h3>
+  <div id="units-view">
+    <div id="new-unit-box">
+      <input type="text" id="new-unit" placeholder="New unit" />
+    </div>
+    <ul id="unit-list">
+      {{#each unit}}
+        {{> unit}}
+      {{/each}}
+    </ul>
+    <div class="controls-all">
+      <button>Publish all</button>
+      <button>Unpublish all</button>
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="unit">
+  <li class="unit">
+    {{#if editing}}
+      <div class="edit">
+        <input id="unit-name-input" type="text" value="{{name}}" />
+      </div>
+    {{else}}
+      <div class="destroy"></div>
+      <div class="display">
+        <input class="check" name="selected" type="checkbox" {{{selected}}} />
+        <span class="unit-text">{{name}}</span>
+        <span class="controls">
+          <button class="break-apart">Break apart</button>
+          <button class="add-options">Add options</button>
+          <button class="settings">Set price</button>
+          <button class="publish">Publish</button>
+        </span>
+      </div>
+    {{/if}}
+  </li>
+</template>

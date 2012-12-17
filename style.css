@@ -1,0 +1,13 @@
+body {
+  background-color: #f3f3f3;
+}
+
+html, body, input, select, textarea {
+  font: 14px/18px "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #393939;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+}
